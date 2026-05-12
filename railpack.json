@@ -20,6 +20,8 @@
     "libsqlite3-dev",
     "libxslt1-dev",
     "libsodium-dev",
-    "libssl-dev"
+    "libssl-dev",
+    "libgd-dev",
+    "libreadline-dev"
   ]
 }
