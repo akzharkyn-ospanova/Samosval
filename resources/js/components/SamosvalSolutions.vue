@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h3 class="text-center my-4"><b>Справочник решения поломок принтеров</b></h3>
+    <h3 class="text-center my-4"><b>Справочник решений по неисправностям техники</b></h3>
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
       <button class="btn btn-secondary" @click="showModal('create')">
@@ -12,8 +12,8 @@
       <thead class="text-center">
         <tr>
           <th>#</th>
-          <th>Название поломки</th>
-          <th>Название решения</th>
+          <th>Неисправность техники</th>
+          <th>Решение</th>
           <th>Дата добавления</th>
           <th>Дата редактирования</th>
           <th>Действия</th>
@@ -42,25 +42,25 @@
 
     <MDBModal v-model="createModal">
       <MDBModalHeader>
-        <MDBModalTitle>Необходимо описать решение:</MDBModalTitle>
+        <MDBModalTitle>Необходимо описать решение для техники:</MDBModalTitle>
       </MDBModalHeader>
       <MDBModalBody>
 
         
         <div class="mb-3">
-          <label class="form-label" >Название поломки</label>
+          <label class="form-label" >Неисправность техники</label>
           <select class="form-select" v-model="newSolution.problem_id">
             <option v-for="p in problems" :key="p.id" :value="p.id">{{ p.title }}</option>
           </select>
-          <div class="form-text">Выберите поломку.</div>
+          <div class="form-text">Выберите неисправность техники.</div>
           <div v-if="errors.problem_id" class="alert alert-danger mt-1">
             <span v-for="msg in errors.problem_id" :key="msg">{{ msg }}</span>
           </div>
         </div>
 
         <div class="mb-3 text-start">
-          <label class="form-label">Описание</label>
-          <input type="text" class="form-control" placeholder="Введите название решения..." v-model="newSolution.title"/>
+          <label class="form-label">Решение</label>
+          <input type="text" class="form-control" placeholder="Введите решение..." v-model="newSolution.title"/>
           <div class="form-text">Поле должно содержать не менее 5 символов и не более 255.</div>
           <div v-if="errors.title" class="alert alert-danger mt-1">
             <span v-for="msg in errors.title" :key="msg">{{ msg }}</span>
@@ -79,18 +79,18 @@
       </MDBModalHeader>
       <MDBModalBody>
         <div class="mb-3 text-start">
-          <label class="form-label">Название</label>
+          <label class="form-label">Неисправность техники</label>
           <select class="form-select" v-model="currentSolution.problem_id">
             <option v-for="p in problems" :key="p.id" :value="p.id">{{ p.title }}</option>
           </select>
-          <div class="form-text">Поле должно содержать не менее 5 символов и не более 50.</div>
+          <div class="form-text">Выберите неисправность техники.</div>
           <div v-if="errors.problem_id" class="alert alert-danger mt-1">
             <span v-for="msg in errors.problem_id" :key="msg">{{ msg }}</span>
           </div>
         </div>
       
         <div class="mb-3 text-start">
-          <label class="form-label">Описание</label>
+          <label class="form-label">Решение</label>
           <input type="text" class="form-control" v-model="currentSolution.title"/>
           <div class="form-text">Поле должно содержать не менее 5 символов и не более 255.</div>
           <div v-if="errors.title" class="alert alert-danger mt-1">

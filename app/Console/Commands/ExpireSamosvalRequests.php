@@ -9,7 +9,7 @@ use Illuminate\Support\Carbon;
 class ExpireSamosvalRequests extends Command
 {
     protected $signature = 'requests:expire-Samosvals';
-    protected $description = 'Обновляет статус просроченных заявок на принтеры и создаёт новые';
+    protected $description = 'Обновляет статус просроченных заявок на технику и создаёт новые';
 
     public function handle()
     {
@@ -30,6 +30,6 @@ class ExpireSamosvalRequests extends Command
             ]);
         }
 
-        $this->info('Обработано ' . $expired->count() . ' просроченных заявок на принтеры.');
+        $this->info('Обработано ' . $expired->count() . ' просроченных заявок на технику.');
     }
 }

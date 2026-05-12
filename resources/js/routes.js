@@ -1,3 +1,4 @@
+import DashboardComponent from "./components/DashboardComponent.vue";
 import SamosvalComponent from "./components/SamosvalComponent.vue";
 import SamosvalProblems from "./components/SamosvalProblems.vue";
 import SamosvalSolutions from "./components/SamosvalSolutions.vue";
@@ -8,6 +9,8 @@ import InboxHistoryComponent from "./components/InboxHistoryComponent.vue";
 import LoginComponent from "./components/LoginComponent.vue";
 
 export const routes = [
+    { path: "/", component: DashboardComponent },
+    { path: "/dashboard", component: DashboardComponent },
     { path: "/login", component: LoginComponent },
     // SamosvalS
     { path: "/Samosvals", component: SamosvalComponent },

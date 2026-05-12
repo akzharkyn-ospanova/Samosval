@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h3 class="text-center my-4"><b>Система заявок принтеров</b></h3>
+    <h3 class="text-center my-4"><b>Система заявок техники</b></h3>
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
       <button class="btn btn-secondary" @click="showModal('create')">
@@ -12,8 +12,8 @@
       <thead class="text-center">
         <tr>
           <th>#</th>
-          <th>Системный номер принтера</th>
-          <th>Поломка</th>
+          <th>Системный номер техники</th>
+          <th>Неисправность техники</th>
           <th>Решение</th>
           <th>Статус</th>
           <th>Дата просрочки</th>
@@ -77,24 +77,24 @@
       </MDBModalHeader>
       <MDBModalBody>
         <div class="mb-3 text-start">
-          <label class="form-label">Принтер</label>
+          <label class="form-label">Техника</label>
           <select class="form-select" v-model="newRequest.samosval_id">
           
             <option v-for="p in Samosvals" :key="p.id" :value="p.id">
               {{ p.system_id }}
             </option>
           </select>
-          <div class="form-text">Выберите принтер.</div>
+          <div class="form-text">Выберите технику.</div>
         </div>
         <div class="mb-3 text-start">
-          <label class="form-label">Поломка</label>
+          <label class="form-label">Неисправность техники</label>
           <select class="form-select" v-model="newRequest.problem_id">
             
             <option v-for="p in problems" :key="p.id" :value="p.id">
               {{ p.title }}
             </option>
           </select>
-          <div class="form-text">Выберите поломку.</div>
+          <div class="form-text">Выберите неисправность техники.</div>
         </div>
         <div v-if="errors" class="alert alert-danger">
           <div v-for="(msgs, field) in errors" :key="field">
@@ -114,24 +114,24 @@
       </MDBModalHeader>
       <MDBModalBody>
         <div class="mb-3 text-start">
-          <label class="form-label">Принтер</label>
+          <label class="form-label">Техника</label>
           <select class="form-select" v-model="currentRequest.samosval_id">
-            <option value="">Выберите принтер</option>
+            <option value="">Выберите технику</option>
             <option v-for="p in Samosvals" :key="p.id" :value="p.id">
               {{ p.system_id }}
             </option>
           </select>
-          <div class="form-text">Выберите принтер из списка.</div>
+          <div class="form-text">Выберите технику из списка.</div>
         </div>
         <div class="mb-3 text-start">
-          <label class="form-label">Поломка</label>
+          <label class="form-label">Неисправность техники</label>
           <select class="form-select" v-model="currentRequest.problem_id">
-            <option value="">Выберите тип поломки.</option>
+            <option value="">Выберите тип неисправности техники.</option>
             <option v-for="p in problems" :key="p.id" :value="p.id">
               {{ p.title }}
             </option>
           </select>
-          <div class="form-text">Выберите тип поломки.</div>
+          <div class="form-text">Выберите тип неисправности техники.</div>
         </div>
         <div v-if="errors" class="alert alert-danger">
           <div v-for="(msgs, field) in errors" :key="field">

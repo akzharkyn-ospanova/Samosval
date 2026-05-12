@@ -29,8 +29,8 @@ class StaffMemberController extends Controller
             'name.min' => 'Имя должно содержать не менее 2 символов.',
             'role.required' => 'Укажите роль сотрудника.',
             'role.in' => 'Роль должна быть менеджер, механик или админ.',
-            'contact.required' => 'Укажите контакт сотрудника.',
-            'contact.regex' => 'Формат: +7 (999) 999-99-99 или +79999999999.',
+            'contact.required' => 'Укажите номер сотрудника.',
+            'contact.regex' => 'Формат KZ: +7 (701) 123-45-67 или +77011234567.',
             'status.required' => 'Укажите статус сотрудника.',
             'status.in' => 'Статус должен быть online, offline или vacation.',
         ]);
@@ -56,8 +56,8 @@ class StaffMemberController extends Controller
             'name.min' => 'Имя должно содержать не менее 2 символов.',
             'role.required' => 'Укажите роль сотрудника.',
             'role.in' => 'Роль должна быть менеджер, механик или админ.',
-            'contact.required' => 'Укажите контакт сотрудника.',
-            'contact.regex' => 'Формат: +7 (999) 999-99-99 или +79999999999.',
+            'contact.required' => 'Укажите номер сотрудника.',
+            'contact.regex' => 'Формат KZ: +7 (701) 123-45-67 или +77011234567.',
             'status.required' => 'Укажите статус сотрудника.',
             'status.in' => 'Статус должен быть online, offline или vacation.',
         ]);

@@ -1,10 +1,10 @@
 <template>
   <div class="container mt-3">
-    <h3 class="text-center my-4"><b>Неисправность техники</b></h3>
+    <h3 class="text-center my-4"><b>Неисправности техники</b></h3>
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
       <button class="btn btn-secondary" @click="showModal('create')">
-        Добавить поломку
+        Добавить неисправность
       </button>
     </div>
 
@@ -12,8 +12,8 @@
       <thead class="text-center">
         <tr>
           <th>#</th>
-          <th>Название</th>
-          <th>Описание</th>
+          <th>Название неисправности</th>
+          <th>Описание для техники</th>
           <th>Дата добавления</th>
           <th>Дата редактирования</th>
           <th>Действия</th>
@@ -21,7 +21,7 @@
       </thead>
       <tbody>
         <tr v-if="problems.length === 0">
-          <td colspan="6" class="text-muted py-4">Поломок не найдено</td>
+          <td colspan="6" class="text-muted py-4">Неисправностей не найдено</td>
         </tr>
         <tr v-for="problem in problems" :key="problem.id">
           <th scope="row">{{ problem.id }}</th>
@@ -42,13 +42,13 @@
 
     <MDBModal v-model="createModal">
       <MDBModalHeader>
-        <MDBModalTitle>Необходимо описать проблему:</MDBModalTitle>
+        <MDBModalTitle>Необходимо описать неисправность техники:</MDBModalTitle>
       </MDBModalHeader>
       <MDBModalBody>
         <form>
           <div class="mb-3 text-start">
-            <label class="form-label">Название</label>
-            <input placeholder="Введите название поломки..." type="text" class="form-control" v-model="form.title" />
+            <label class="form-label">Название неисправности</label>
+            <input placeholder="Введите название неисправности техники..." type="text" class="form-control" v-model="form.title" />
             <div class="form-text">Поле должно содержать не менее 5 символов и не более 50.</div>
             <div v-if="errors.title" class="alert alert-danger mt-1">
               <span v-for="msg in errors.title" :key="msg">{{ msg }}</span>
@@ -56,8 +56,8 @@
           </div>
 
           <div class="mb-3 text-start">
-            <label class="form-label">Описание</label>
-            <input placeholder="Введите описание поломки..." type="text" class="form-control" v-model="form.description" />
+            <label class="form-label">Описание для техники</label>
+            <input placeholder="Введите описание неисправности техники..." type="text" class="form-control" v-model="form.description" />
             <div class="form-text">Поле должно содержать не менее 5 символов и не более 255.</div>
             <div v-if="errors.description" class="alert alert-danger mt-1">
               <span v-for="msg in errors.description" :key="msg">{{ msg }}</span>
@@ -78,7 +78,7 @@
       <MDBModalBody>
         <form>
           <div class="mb-3 text-start">
-            <label class="form-label">Название</label>
+            <label class="form-label">Название неисправности</label>
             <input type="text" class="form-control" v-model="form.title" />
             <div class="form-text">Поле должно содержать не менее 5 символов и не более 50.</div>
             <div v-if="errors.title" class="alert alert-danger mt-1">
@@ -87,7 +87,7 @@
           </div>
 
           <div class="mb-3 text-start">
-            <label class="form-label">Описание</label>
+            <label class="form-label">Описание для техники</label>
             <input type="text" class="form-control" v-model="form.description" />
             <div class="form-text">Поле должно содержать не менее 5 символов и не более 255.</div>
             <div v-if="errors.description" class="alert alert-danger mt-1">

@@ -83,10 +83,10 @@ class InboxController extends Controller
         $lead = Lead::findOrFail($id);
 
         $data = $request->validate([
-            'name' => 'required|string|min:2|max:255',
-            'contacts' => 'required|string|min:3|max:255',
-            'comment' => 'required|string|min:5',
-            'source' => 'required|string|min:2|max:255',
+            'name' => 'sometimes|required|string|min:2|max:255',
+            'contacts' => 'sometimes|required|string|min:3|max:255',
+            'comment' => 'sometimes|required|string|min:5',
+            'source' => 'sometimes|required|string|min:2|max:255',
             'assigned_to' => 'sometimes|nullable|integer|exists:staff_members,id',
             'user_id' => 'sometimes|integer', // ignore user_id from request
         ]);
